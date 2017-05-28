@@ -1,0 +1,17 @@
+{
+  "name": "timey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.15.3",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "debug": "node --nolazy --debug-brk=5858 server.js",
+    "inspect": "node --inspect server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

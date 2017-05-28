@@ -1,0 +1,52 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [{
+            "type": "node",
+            "request": "launch",
+            "name": "Node debug",
+            "cwd": "${workspaceRoot}",
+            "port": 5858,
+            "protocol": "legacy",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script", "debug"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Node",
+            "cwd": "${workspaceRoot}",
+            "port": 9229,
+            "protocol": "inspector",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script", "inspect"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Chrome",
+            "url": "http://localhost:4200",
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}/client/src",
+            "userDataDir": "${workspaceRoot}/.vscode/chrome",
+            "sourceMapPathOverrides": {
+                "webpack:///./~/*": "${workspaceRoot}/client/node_modules/*",
+                "webpack:///./src/*": "${workspaceRoot}/client/src/*"
+            }
+        },
+    ],
+    "compounds": [
+        {
+            "name": "Full-stack",
+            "configurations": ["Node", "Chrome"]
+        }
+    ]
+}
